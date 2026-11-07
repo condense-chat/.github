@@ -1,22 +1,21 @@
-<a href="https://condense.chat/"><img src="https://raw.githubusercontent.com/condense-chat/.github/main/condense.svg" width="100%" alt="Condense. Less context. Same agent."></a>
+<a href="https://condense.chat/"><img src="https://raw.githubusercontent.com/condense-chat/.github/main/profile/condense-banner.png" width="100%" alt="Condense. Less context. Same agent."></a>
 
-Every time an agent calls a model, it sends earlier messages and tool results again. Condense compresses that history and keeps the stable prefix cached, so long sessions cost less to run on Anthropic and OpenAI.
+Long-running agents resend earlier messages, file reads, and tool results on every turn. Condense compresses that history and keeps the stable prefix cached to reduce model costs on Anthropic and OpenAI.
 
-**[Connect your agent →](https://condense.chat/docs/quickstart/)** · **[Install the CLI →](https://github.com/condense-chat/dense#install)**
+**[Connect your agent](https://condense.chat/docs/quickstart/)** · **[Install the CLI](https://github.com/condense-chat/dense#install)**
 
 ### Try it in your terminal
 
-After installing `dense`, run a coding session through Condense and check what it saved.
+Use [`dense`](https://github.com/condense-chat/dense) to run Claude Code, Codex, or OpenCode through Condense. After installing, launch the agent you already use:
 
 ```sh
-dense claude     # also supports codex and opencode
-dense info       # see token and cost savings
+dense claude     # or: dense codex, dense opencode
 ```
 
-Using Hermes Agent? [Add the Hermes plugin](https://github.com/condense-chat/hermes-condense) to route its Anthropic requests through Condense.
+Type `/dense:info` inside the agent to see the input tokens and model cost for that session. Using Hermes Agent? [Add the Hermes plugin](https://github.com/condense-chat/hermes-condense) to route its Anthropic requests through Condense.
 
-### Reproduce the numbers
+### Reproduce the benchmark
 
-In our published Claude Haiku 4.5 comparison, Condense cut cost by about **28%** on sessions truncated to 190k tokens. The benchmark includes recorded usage, so you can recompute the result offline without an API key.
+**63.8% lower estimated model cost** across 64 recorded coding sessions. In an offline replay of all 11,712 turns, estimated model cost fell from **$861.28 to $312.20**. The benchmark simulates prompt caching and prices token usage at Claude Opus 4.8 rates, excluding Condense fees.
 
-[Explore the benchmark and reference runs →](https://github.com/condense-chat/minmax-bench#see-cached-results)
+[Watch the replay](https://github.com/condense-chat/dense#reproduce-the-benchmark) · [Inspect the run data](https://github.com/condense-chat/minmax-bench/tree/main/runs/run-5c61ab52-8eea-4fee-97a4-5c64ee5344af) · [Explore the quality evaluation](https://github.com/condense-chat/minmax-bench/blob/main/docs/quality.md)
