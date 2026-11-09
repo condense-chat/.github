@@ -1,5 +1,7 @@
 <a href="https://condense.chat/"><img src="https://raw.githubusercontent.com/condense-chat/.github/main/profile/condense-banner.png" width="100%" alt="Condense. Less context. Same agent."></a>
 
+[condense.chat](https://condense.chat) · [condense.chat/docs](https://condense.chat/docs/) · [helm.condense.chat](https://helm.condense.chat)
+
 Long-running agents resend earlier messages, file reads, and tool results on every turn. Condense compresses that history and keeps the stable prefix cached to reduce model costs on Anthropic and OpenAI.
 
 **[Connect your agent](https://condense.chat/docs/quickstart/)** · **[Install the CLI](https://github.com/condense-chat/dense#install)**
